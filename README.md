@@ -1,7 +1,9 @@
 <p align="center">
     <img src="logo.png" width="580" max-width="90%" alt="Swift Web Crawler in action" />
 </p>
+
 # Compass
+
 Welcome to Compass! A minimal Compass iOS App.
 
 To know more about the App, please refer to my blog [here](https://medium.com/swiftly-swift/how-to-build-a-compass-app-in-swift-2b6647ae25e8).
