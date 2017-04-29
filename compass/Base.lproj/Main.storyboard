@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Compass View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CompassViewController" customModule="compass" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="7t5-o5-sfu">
+                                <rect key="frame" x="-0.5" y="145.5" width="375" height="375"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" allowsDirectInteraction="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7t5-o5-sfu" secondAttribute="height" multiplier="1:1" id="pwz-cf-sZU"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7t5-o5-sfu" firstAttribute="width" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="width" id="95A-hf-n8F"/>
+                            <constraint firstItem="7t5-o5-sfu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HoT-w6-N01"/>
+                            <constraint firstItem="7t5-o5-sfu" firstAttribute="height" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="height" id="u3y-qj-TJj"/>
+                            <constraint firstItem="7t5-o5-sfu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zAq-kZ-5rR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="7t5-o5-sfu" id="MI8-vw-ATu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Tap to the Destination-->
+        <scene sceneID="n4H-RM-PaH">
+            <objects>
+                <viewController id="hdZ-vP-bdb" customClass="MapViewController" customModule="compass" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ebR-zg-1zo"/>
+                        <viewControllerLayoutGuide type="bottom" id="zuF-Ho-hGa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EzX-I6-uXY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="a55-uR-U7e">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="a55-uR-U7e" firstAttribute="top" secondItem="EzX-I6-uXY" secondAttribute="top" id="AYW-fR-BIg"/>
+                            <constraint firstAttribute="trailing" secondItem="a55-uR-U7e" secondAttribute="trailing" id="QTj-5X-3WH"/>
+                            <constraint firstItem="a55-uR-U7e" firstAttribute="leading" secondItem="EzX-I6-uXY" secondAttribute="leading" id="ZfZ-hK-5cv"/>
+                            <constraint firstItem="zuF-Ho-hGa" firstAttribute="top" secondItem="a55-uR-U7e" secondAttribute="bottom" id="vG6-rl-mhy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tap to the Destination" id="d7B-cu-ebZ">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="pbB-fx-iRe">
+                            <connections>
+                                <action selector="cancelTap:" destination="hdZ-vP-bdb" id="X6x-6q-170"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="mGz-5U-v75">
+                            <connections>
+                                <action selector="resetTap:" destination="hdZ-vP-bdb" id="IbE-Od-Bvf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="a55-uR-U7e" id="j1m-X6-Q3d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jL2-oH-RVV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1612" y="36"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Fde-i1-iph">
+            <objects>
+                <navigationController storyboardIdentifier="MapViewController" automaticallyAdjustsScrollViewInsets="NO" id="Fy1-bi-l2w" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DGB-x8-dHV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hdZ-vP-bdb" kind="relationship" relationship="rootViewController" id="gYi-UM-WW9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FDA-ox-gy8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="804" y="36"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow" width="1024" height="1024"/>
+    </resources>
+</document>
