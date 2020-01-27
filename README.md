@@ -6,10 +6,7 @@
 
 Welcome to Compass! A minimal Compass iOS App.
 
-To know more about the App, please refer to my blog [here](https://medium.com/swiftly-swift/how-to-build-a-compass-app-in-swift-2b6647ae25e8).
-
-## Download
-Download the App on the **[App Store](https://itunes.apple.com/app/compass/id1231545538)**.
+To know more about the App, please refer to my blog [here](https://www.fivestars.blog/code/build-compass-app-swift.html).
 
 ## How to build the App
 1. Install the latest [Xcode developer tools](https://developer.apple.com/xcode/downloads/) from Apple.
